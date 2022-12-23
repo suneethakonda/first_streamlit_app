@@ -1,7 +1,7 @@
 
 import streamlit
-import pandas
-
+#import pandas
+#import requests
 streamlit.title('My Parents New Healthy Diner') 
 
 streamlit.header('BF Menu')
@@ -26,4 +26,8 @@ streamlit.text("fruit load list:")
 streamlit.dataframe(my_data_rows)
 fruit_choice = streamlit.text_input('What fruit would you like to add?','JackFruit')
 streamlit.write('Thanks for adding ', fruit_choice)
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+def insert_row_snowflake(new_fruit):
+  with my_cnx.cursor() as my_cur:
+my_cur.execute("insert into fruit_load_list values ('"jackfruit", "papaya", "guava" and "kiwi"')")
+return "Thanks for adding " + new_fruit
+ 
